@@ -1,0 +1,46 @@
+mysql> describe microposts;
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| id         | bigint(20)   | NO   | PRI | NULL    | auto_increment |
+| content    | varchar(255) | YES  |     | NULL    |                |
+| user_id    | bigint(20)   | YES  | MUL | NULL    |                |
+| created_at | datetime     | NO   |     | NULL    |                |
+| updated_at | datetime     | NO   |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> describe favorites;
++--------------+------------+------+-----+---------+----------------+
+| Field        | Type       | Null | Key | Default | Extra          |
++--------------+------------+------+-----+---------+----------------+
+| id           | bigint(20) | NO   | PRI | NULL    | auto_increment |
+| user_id      | bigint(20) | YES  | MUL | NULL    |                |
+| micropost_id | bigint(20) | YES  | MUL | NULL    |                |
+| created_at   | datetime   | NO   |     | NULL    |                |
+| updated_at   | datetime   | NO   |     | NULL    |                |
++--------------+------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+mysql> describe users;
++-----------------+--------------+------+-----+---------+----------------+
+| Field           | Type         | Null | Key | Default | Extra          |
++-----------------+--------------+------+-----+---------+----------------+
+| id              | bigint(20)   | NO   | PRI | NULL    | auto_increment |
+| name            | varchar(255) | YES  |     | NULL    |                |
+| email           | varchar(255) | YES  |     | NULL    |                |
+| password_digest | varchar(255) | YES  |     | NULL    |                |
+| created_at      | datetime     | NO   |     | NULL    |                |
+| updated_at      | datetime     | NO   |     | NULL    |                |
++-----------------+--------------+------+-----+---------+----------------+
+6 rows in set (0.01 sec)
+mysql> describe relationships
+    -> ;
++------------+------------+------+-----+---------+----------------+
+| Field      | Type       | Null | Key | Default | Extra          |
++------------+------------+------+-----+---------+----------------+
+| id         | bigint(20) | NO   | PRI | NULL    | auto_increment |
+| user_id    | bigint(20) | YES  | MUL | NULL    |                |
+| follow_id  | bigint(20) | YES  | MUL | NULL    |                |
+| created_at | datetime   | NO   |     | NULL    |                |
+| updated_at | datetime   | NO   |     | NULL    |                |
++------------+------------+------+-----+---------+----------------+
